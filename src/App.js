@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import PokemonsContainer from "./containers/PokemonsContainer";
 import TeamContainer from "./containers/TeamContainer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home"
 
 // difference functional component* and class component
 // Access to lifecycle methods only class components have access to them*
@@ -88,8 +89,8 @@ const App = () => {
               <TeamContainer runAway={runAway} team={global.team} />
             )}
           />
-
-          <Route path="/" render={() => <h1>ROUTE DOES NOT EXIST!</h1>} />
+          <Route exact path="/" render={Home} />
+          <Route path="*" render={() => <h1>ROUTE DOES NOT EXIST!</h1>} />
         </Switch>
       </Router>
     </div>
